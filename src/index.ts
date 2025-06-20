@@ -8,7 +8,7 @@ const fastify = Fastify({ logger: true });
 
 fastify.register(
   async (apiScope) => {
-    apiScope.register(itemsRoutes, { prefix: "/items" });
+    apiScope.register(itemsRoutes);
   },
   { prefix: "/api" }
 );
@@ -19,7 +19,8 @@ fastify.register(
     await mongoose.connect(mongoUri);
     fastify.log.info("MongoDB connected");
 
-    await fastify.listen({ port: 3000 });
+    const port = Number(process.env.PORT) || 3000;
+    await fastify.listen({ port });
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
