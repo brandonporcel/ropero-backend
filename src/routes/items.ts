@@ -1,5 +1,4 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
-import mongoose from "mongoose";
 
 import User from "../models/User";
 import Wearable from "../models/Wearable";
@@ -8,8 +7,8 @@ interface Params {
   username: string;
 }
 interface GetGuarableParams {
-  userId: string;
-  wearableId: string;
+  username: string;
+  wearableSlug: string;
 }
 
 const itemsRoutes = (fastify: FastifyInstance) => {
@@ -28,19 +27,19 @@ const itemsRoutes = (fastify: FastifyInstance) => {
   );
 
   fastify.get(
-    "/:userId/wearables/:wearableId",
+    "/:username/:wearableSlug",
     async (req: FastifyRequest<{ Params: GetGuarableParams }>, res) => {
-      const { userId, wearableId } = req.params;
+      const { username, wearableSlug } = req.params;
 
-      if (!mongoose.Types.ObjectId.isValid(userId)) {
-        return res.status(400).send({ error: "Invalid userId" });
+      const user = await User.findOne({ username });
+      if (!user) {
+        return res.status(400).send({ error: "User not found" });
       }
 
-      if (!mongoose.Types.ObjectId.isValid(wearableId)) {
-        return res.status(400).send({ error: "Invalid wearableId" });
-      }
-
-      const item = await Wearable.findOne({ id: wearableId, userId });
+      const item = await Wearable.findOne({
+        slug: wearableSlug,
+        userId: user.id,
+      });
       return item;
     },
   );

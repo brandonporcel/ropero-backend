@@ -5,6 +5,7 @@ const WearableSchema = new mongoose.Schema({
   type: { type: Number, required: true },
   thumbnail: String,
   description: { type: String, required: false },
+  slug: String,
   order: { type: Number, required: false },
 });
 
