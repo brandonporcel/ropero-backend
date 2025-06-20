@@ -4,7 +4,7 @@ import Wearable from "../models/Wearable";
 import User from "../models/User";
 
 interface Params {
-  userId: string;
+  username: string;
 }
 interface GetGuarableParams {
   userId: string;
@@ -13,15 +13,15 @@ interface GetGuarableParams {
 
 const itemsRoutes = (fastify: FastifyInstance) => {
   fastify.get(
-    "/:userId/wearables",
+    "/:username/wearables",
     async (req: FastifyRequest<{ Params: Params }>, res) => {
-      const { userId } = req.params;
-
-      if (!mongoose.Types.ObjectId.isValid(userId)) {
-        return res.status(400).send({ error: "Invalid userId" });
+      const { username } = req.params;
+      const user = await User.findOne({ username });
+      if (!user) {
+        return res.status(400).send({ error: "User not found" });
       }
 
-      const items = await Wearable.find({ userId });
+      const items = await Wearable.find({ userId: user.id });
       return items;
     }
   );
@@ -43,28 +43,6 @@ const itemsRoutes = (fastify: FastifyInstance) => {
       return item;
     }
   );
-
-  fastify.get("/all", async () => {
-    const users = await User.find({});
-    return users;
-  });
-
-  // fastify.get(
-  //   "/:userId",
-  //   async (req: FastifyRequest<{ Params: GetGuarableParams }>, res) => {
-  //     console.log("hola");
-  //     const { userId } = req.params;
-
-  //     if (!mongoose.Types.ObjectId.isValid(userId)) {
-  //       return res.status(400).send({ error: "Invalid userId" });
-  //     }
-
-  //     // const item = await User.findOne({ id: userId });
-  //     const item = await User.findById(userId);
-  //     console.log(userId, item);
-  //     return item;
-  //   }
-  // );
 };
 
 export default itemsRoutes;
