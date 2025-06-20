@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node dist/index",
     "dev": "ts-node-dev src/index",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write src/"
   },
   "repository": {
     "type": "git",

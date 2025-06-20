@@ -1,7 +1,8 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
 import mongoose from "mongoose";
-import Wearable from "../models/Wearable";
+
 import User from "../models/User";
+import Wearable from "../models/Wearable";
 
 interface Params {
   username: string;
@@ -23,7 +24,7 @@ const itemsRoutes = (fastify: FastifyInstance) => {
 
       const items = await Wearable.find({ userId: user.id });
       return items;
-    }
+    },
   );
 
   fastify.get(
@@ -41,7 +42,7 @@ const itemsRoutes = (fastify: FastifyInstance) => {
 
       const item = await Wearable.findOne({ id: wearableId, userId });
       return item;
-    }
+    },
   );
 };
 

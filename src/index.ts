@@ -1,6 +1,8 @@
 import Fastify from "fastify";
 import mongoose from "mongoose";
+
 import "dotenv/config";
+
 import cors from "@fastify/cors";
 
 import itemsRoutes from "./routes/items";
@@ -15,7 +17,7 @@ fastify.register(
   async (apiScope) => {
     apiScope.register(itemsRoutes);
   },
-  { prefix: "/api" }
+  { prefix: "/api" },
 );
 
 (async () => {
