@@ -1,5 +1,6 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
 
+// import { SEED } from "../../seed";
 import User from "../models/User";
 import Wearable from "../models/Wearable";
 
@@ -15,6 +16,10 @@ const itemsRoutes = (fastify: FastifyInstance) => {
   fastify.get(
     "/:username/wearables",
     async (req: FastifyRequest<{ Params: Params }>, res) => {
+      // console.log("SEED", SEED);
+      // SEED.forEach((item) => {
+      //   new Wearable(item).save();
+      // });
       const { username } = req.params;
       const user = await User.findOne({ username });
       if (!user) {
