@@ -23,8 +23,13 @@ const WearableSchema = new mongoose.Schema({
     type: new mongoose.Schema(
       {
         cotton: { type: Number },
+        recycledCotton: { type: Number },
         polyester: { type: Number },
+        nylon: { type: Number },
         elastane: { type: Number },
+        polyamide: { type: Number },
+        liningViscose: { type: Number },
+        liningCupro: { type: Number },
       },
       { _id: false },
     ),

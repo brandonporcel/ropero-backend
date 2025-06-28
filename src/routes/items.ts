@@ -17,9 +17,14 @@ const itemsRoutes = (fastify: FastifyInstance) => {
     "/:username/wearables",
     async (req: FastifyRequest<{ Params: Params }>, res) => {
       // console.log("SEED", SEED);
-      // SEED.forEach((item) => {
-      //   new Wearable(item).save();
-      // });
+      // try {
+      //   await Wearable.deleteMany({});
+      //   SEED.forEach((item) => {
+      //     new Wearable(item).save();
+      //   });
+      // } catch (error) {
+      //   console.log(error);
+      // }
       const { username } = req.params;
       const user = await User.findOne({ username });
       if (!user) {
