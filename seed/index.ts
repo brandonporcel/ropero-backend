@@ -113,6 +113,7 @@ export const SEED = [
     type: 4,
     composition: {
       cotton: 100,
+      denim: 100,
     },
     wash: [
       "noBleachAllowed",

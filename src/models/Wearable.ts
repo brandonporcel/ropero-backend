@@ -30,6 +30,7 @@ const WearableSchema = new mongoose.Schema({
         polyamide: { type: Number },
         liningViscose: { type: Number },
         liningCupro: { type: Number },
+        denim: { type: Number },
       },
       { _id: false },
     ),
@@ -37,12 +38,6 @@ const WearableSchema = new mongoose.Schema({
   },
 
   wash: { type: Array },
-  // wash: {
-  // ....
-  //   maxTemperature: { type: Number }, // temperatura máxima en °C
-  //   iron: { type: Boolean }, // se puede planchar
-  //   handWash: { type: Boolean }, // se puede lavar a mano
-  // },
 });
 
 export default mongoose.model("Wearable", WearableSchema);
