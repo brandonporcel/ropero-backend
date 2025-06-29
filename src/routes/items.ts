@@ -1,6 +1,5 @@
 import { FastifyInstance, FastifyRequest } from "fastify";
 
-// import { SEED } from "../../seed";
 import User from "../models/User";
 import Wearable from "../models/Wearable";
 
@@ -13,18 +12,13 @@ interface GetGuarableParams {
 }
 
 const itemsRoutes = (fastify: FastifyInstance) => {
+  fastify.get("/ping", async (_req, res) => {
+    return res.send({ message: "pong 🏓", timestamp: Date.now() });
+  });
+
   fastify.get(
     "/:username/wearables",
     async (req: FastifyRequest<{ Params: Params }>, res) => {
-      // console.log("SEED", SEED);
-      // try {
-      //   await Wearable.deleteMany({});
-      //   SEED.forEach((item) => {
-      //     new Wearable(item).save();
-      //   });
-      // } catch (error) {
-      //   console.log(error);
-      // }
       const { username } = req.params;
       const user = await User.findOne({ username });
       if (!user) {

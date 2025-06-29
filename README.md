@@ -1,10 +1,22 @@
-# Ropero Backend
+# 👗 Ropero API
 
-## Getting Started
+Catalogue of all the clothes you own, and how to take care of them.
 
-### Prerequisites
+> Made for [Ropero](https://github.com/brandonporcel/ropero).
 
-- Node.js
-- MongoDB
+## 🏢 Install
 
-### Installation
+```bash
+git clone https://github.com/brandonporcel/ropero-backend.git
+cd ropero-backend
+npm i
+npm run dev
+```
+
+## 📋 TODO List
+
+- [ ]
+
+## Feedback
+
+I’d love to hear your thoughts! Contact me via [email](mailto:brandon7.7porcel@gmail.com) or [LinkedIn](https://www.linkedin.com/in/brandonporcel/).
