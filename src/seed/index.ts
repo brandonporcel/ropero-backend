@@ -34,9 +34,9 @@ export const SEED = [
     slug: "camiseta-titular-argentina-24",
     wash: [
       "noBleachAllowed",
-      "noInDry",
+      "noDryClean",
       "washTemperature1",
-      "noDryer",
+      "noTumbleDry",
       "iron1",
     ],
     type: 14,
@@ -98,12 +98,7 @@ export const SEED = [
       liningViscose: 52,
       liningCupro: 48,
     },
-    wash: [
-      "dryCleanHydrocarbons", // debe lavarse en seco
-      "noBleachAllowed", // no usar blanqueador
-      "noTumbleDry", // no usar secadora
-      "iron1", // planchar a baja temperatura
-    ],
+    wash: ["dryCleanHydrocarbons", "noBleachAllowed", "noTumbleDry", "iron1"],
   },
   {
     userId: userObjectId,
@@ -124,7 +119,6 @@ export const SEED = [
       "noSoothing",
       "similarColors",
       "withZippers",
-      "softDetergent",
       "removePromptly",
     ],
   },

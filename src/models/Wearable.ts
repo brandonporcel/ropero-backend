@@ -10,6 +10,11 @@ const WearableSchema = new mongoose.Schema({
   sizes: {
     type: new mongoose.Schema(
       {
+        rise: { type: Number },
+        waist: { type: Number },
+        sleeves: { type: Number },
+        botamaga: { type: Number },
+        height: { type: Number },
         total_large: { type: Number },
         total_width: { type: Number },
         shoulders_width: { type: Number },
@@ -18,7 +23,6 @@ const WearableSchema = new mongoose.Schema({
     ),
     required: false,
   },
-
   composition: {
     type: new mongoose.Schema(
       {
@@ -28,6 +32,8 @@ const WearableSchema = new mongoose.Schema({
         nylon: { type: Number },
         elastane: { type: Number },
         polyamide: { type: Number },
+        viscose: { type: Number },
+        liningPolyester: { type: Number },
         liningViscose: { type: Number },
         liningCupro: { type: Number },
         denim: { type: Number },
@@ -36,8 +42,8 @@ const WearableSchema = new mongoose.Schema({
     ),
     required: false,
   },
-
   wash: { type: Array },
+  label: { type: String, required: false },
 });
 
 export default mongoose.model("Wearable", WearableSchema);
