@@ -67,7 +67,7 @@ export const MI_ROPERO = [
     slug: "nike-pant-jean-white",
     type: 14,
     sizes: {
-      height: 104,
+      total_large: 104,
       botamaga: 23.5,
       waist: 46,
       rise: 30,
@@ -107,7 +107,7 @@ export const MI_ROPERO = [
       liningPolyester: 100,
     },
     sizes: {
-      height: 69,
+      total_large: 69,
       total_width: 61,
     },
     wash: [
@@ -151,7 +151,7 @@ export const MI_ROPERO = [
     slug: "sastrero",
     type: 14,
     sizes: {
-      height: 102,
+      total_large: 102,
     },
     composition: {
       polyester: 65,
@@ -173,7 +173,7 @@ export const MI_ROPERO = [
     type: 14,
     sizes: {
       total_width: 56,
-      height: 68,
+      total_large: 68,
       sleeves: 58,
     },
     composition: {
@@ -275,5 +275,92 @@ export const MI_ROPERO = [
       "perchloroethylene",
     ],
     extras: ["washInsideOut"],
+  },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    description: "buyed at @caju.clothess instagram.com/p/C3qzHGcJZcB",
+    slug: "buzo-and1",
+    type: 14,
+    composition: {
+      cotton: 80,
+      polyester: 20,
+    },
+    wash: [
+      "washTemperature1",
+      "tumbleDryLow",
+      "noBleachAllowed",
+      "iron1",
+      "similarColors",
+      "removePromptly",
+    ],
+  },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    slug: "umbro-pant",
+    type: 14,
+    sizes: {
+      total_large: 94,
+      waist: 44,
+      rise: 30,
+      botamaga: 20,
+    },
+    wash: ["washTemperature1", "bleachAllowed", "iron1"],
+  },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    slug: "musculosa-nike",
+    type: 14,
+    composition: {
+      polyester: 100,
+    },
+    sizes: {
+      total_width: 52,
+      total_large: 70,
+    },
+    wash: [
+      "washTemperature1",
+      "noBleachAllowed",
+      "tumbleDryLow",
+      "iron1",
+      "noDryClean",
+    ],
+  },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    slug: "campera-green",
+    type: 14,
+    composition: {
+      cotton: 100,
+      liningPolyester: 100,
+    },
+    wash: [
+      "washTemperature1",
+      "noBleachAllowed",
+      "noTumbleDry",
+      "iron1",
+      "tumbleHang",
+      "perchloroethylene",
+    ],
+  },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    slug: "vest-yd",
+    type: 14,
+    composition: {
+      nylon: 100,
+      liningPolyester: 100,
+    },
+    wash: [
+      "washTemperature1",
+      "iron2",
+      "noTumbleDry",
+      "perchloroethylene",
+      "noBleachAllowed",
+    ],
   },
 ];

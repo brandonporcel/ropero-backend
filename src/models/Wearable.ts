@@ -14,7 +14,6 @@ const WearableSchema = new mongoose.Schema({
         waist: { type: Number },
         sleeves: { type: Number },
         botamaga: { type: Number },
-        height: { type: Number },
         total_large: { type: Number },
         total_width: { type: Number },
         shoulders_width: { type: Number },
