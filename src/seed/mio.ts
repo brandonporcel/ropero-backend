@@ -363,4 +363,21 @@ export const MI_ROPERO = [
       "noBleachAllowed",
     ],
   },
+    {
+    userId: userObjectId,
+    thumbnail: "",
+    slug: "buzo-printify",
+    type: 14,
+    composition: {
+      cotton: 50,
+      polyester: 50,
+    },
+    wash: [
+      "washTemperature1",
+      "noBleachAllowed",
+      "tumbleDryLow",
+      "noIron",
+      "noDryClean",
+    ],
+  },
 ];
