@@ -363,7 +363,7 @@ export const MI_ROPERO = [
       "noBleachAllowed",
     ],
   },
-    {
+  {
     userId: userObjectId,
     thumbnail: "",
     slug: "buzo-printify",
@@ -376,6 +376,25 @@ export const MI_ROPERO = [
       "washTemperature1",
       "noBleachAllowed",
       "tumbleDryLow",
+      "noIron",
+      "noDryClean",
+    ],
+  },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    description:
+      "buyed at @bigsizeesport/@diggingclubb. instagram.com/p/DAUWV-NxziK",
+    slug: "nike-nocta",
+    type: 11,
+    composition: {
+      lining: 79,
+      polyester: 21,
+    },
+    wash: [
+      "handWash",
+      "noBleachAllowed",
+      "dryInPosition",
       "noIron",
       "noDryClean",
     ],

@@ -11,10 +11,57 @@ interface GetGuarableParams {
   wearableSlug: string;
 }
 
+interface CreateWearableBody {
+  userId: string;
+  type: number;
+  thumbnail: string;
+  wash: string[];
+}
+
+interface DeleteWearableBody {
+  ids: string[];
+}
+
 const itemsRoutes = (fastify: FastifyInstance) => {
   fastify.get("/ping", async (_req, res) => {
     return res.send({ message: "pong 🏓", timestamp: Date.now() });
   });
+
+  fastify.post(
+    "/create",
+    async (req: FastifyRequest<{ Body: CreateWearableBody }>, res) => {
+      if (!req.body || Object.keys(req.body).length === 0) {
+        return res.status(400).send({ error: "Body is empty" });
+      }
+      if (
+        !req.body.userId ||
+        !req.body.type ||
+        !req.body.thumbnail ||
+        !req.body.wash
+      ) {
+        return res.status(400).send({ error: "Body is incomplete" });
+      }
+
+      await Wearable.create(req.body);
+
+      return res.send({ message: "wearable created" });
+    },
+  );
+
+  fastify.delete(
+    "/delete",
+    async (req: FastifyRequest<{ Body: DeleteWearableBody }>, res) => {
+      if (!req.body) {
+        return res.status(400).send({ error: "Body is empty" });
+      }
+      if (req.body.ids.length === 0) {
+        return res.status(400).send({ error: "Add ids" });
+      }
+
+      await Wearable.deleteMany({ _id: { $in: req.body.ids } });
+      return res.send({ message: "wearables deleted" });
+    },
+  );
 
   fastify.get(
     "/:username/wearables",
