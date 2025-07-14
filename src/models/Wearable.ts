@@ -25,6 +25,7 @@ const WearableSchema = new mongoose.Schema({
   composition: {
     type: new mongoose.Schema(
       {
+        polyamide: { type: Number },
         lining: { type: Number },
         cotton: { type: Number },
         recycledCotton: { type: Number },
