@@ -23,6 +23,9 @@ export const MI_ROPERO = [
     thumbnail: "",
     slug: "camiseta-titular-river-plate-24-25",
     type: 14,
+    composition:{
+      polyester: 100
+    },
     wash: [
       "noBleachAllowed",
       "noDryClean",
