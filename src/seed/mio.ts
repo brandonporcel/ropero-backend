@@ -409,7 +409,7 @@ export const MI_ROPERO = [
       polyester: 48,
     },
     wash: [
-      "handWash",
+      "washTemperature1",
       "noBleachAllowed",
       "iron1",
       "perchloroethylene",
