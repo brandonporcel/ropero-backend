@@ -399,4 +399,21 @@ export const MI_ROPERO = [
       "noDryClean",
     ],
   },
+  {
+    userId: userObjectId,
+    thumbnail: "",
+    slug: "afa-98",
+    type: 14,
+    composition: {
+      polyamide: 62,
+      polyester: 48,
+    },
+    wash: [
+      "handWash",
+      "noBleachAllowed",
+      "iron1",
+      "perchloroethylene",
+      "waterRunOff",
+    ],
+  },
 ];
